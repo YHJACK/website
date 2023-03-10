@@ -1,0 +1,7 @@
+Code/*.tfvars
+Code/.terraform/providers/registry.terraform.io/hashicorp/aws/4.58.0/linux_amd64/terraform-provider-aws_v4.58.0_x5
+Code/.terraform.lock.hcl
+Code/terraform.tfstate
+Code/terraform.tfstate.backup
+key/website_key
+key/website_key.pub

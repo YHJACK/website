@@ -5,7 +5,7 @@ variable "AWS_SECRET_KEY" {
 }
 
 variable "AWS_REGION" {
-  default = "ap-northeast-1e"
+  default = "ap-northeast-1"
 }
 
 variable "AWS_BLUEPRINT" {
@@ -17,13 +17,18 @@ variable "AWS_BUNDLE" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "./key/website_key"
+  default = "../key/website_key"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "./key/website_key.pub"
+  default = "../key/website_key.pub"
 }
 
 variable "AWS_AVAILABILITY_ZONE" {
   default = "ap-northeast-1a"
 }
+
+variable "AWS_NAME"{
+  default = "website_instance"
+}
+

@@ -1,22 +1,24 @@
-resource "aws_security_group" "allow-ssh" {
-  vpc_id      = aws_vpc.main.id
-  name        = "allow-ssh"
-  description = "security group that allows ssh and all egress traffic"
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+resource "aws_lightsail_instance_public_ports" "website_fw" {
+  instance_name = aws_lightsail_instance.website.name
+
+  port_info {
+    protocol  = "tcp"
+    from_port = 22
+    to_port   = 22
+    cidrs = ["0.0.0.0/0"]
   }
 
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+
+  port_info {
+    protocol  = "tcp"
+    from_port = 80
+    to_port   = 80
   }
-  tags = {
-    Name = "allow-ssh"
+
+
+  port_info {
+    protocol  = "tcp"
+    from_port = 443
+    to_port   = 443
   }
 }
-
